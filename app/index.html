@@ -10,14 +10,17 @@
 </head>
 <body ng-controller="LagosAppController">
   <div id="container">
-    <section id = "datalist"></section>
+    <section id = "datalist" ng-repeat="list in lists">
+      <p>{{list.name}}</p>
+      <p>{{list.region}}</p>
+    </section>
     <section id = "mapcanvas"></section>
     <section id = "userinput">
       <form>
         <legend>Enter Details</legend>
-        <input type="text" name="bustop" placeholder="Type in a Bustop" ng-model="bustop">
-        <input type="text" name="region" placeholder="Type in the area" ng-model= "region">
-        <input type="submit" value="submit" id="submit" ng-click="postData()">
+        <input type="text" name="bustop" placeholder="Type in a Bustop" ng-model="bustop"><br>
+        <input type="text" name="region" placeholder="Type in the area" ng-model= "region"><br>
+        <input type="submit" value="submit" id="submit" ng-click="getData()">
       </form>
     </section>
   </div>
